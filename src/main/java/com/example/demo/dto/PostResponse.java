@@ -1,23 +1,21 @@
-package com.example.demo.model;
+package com.example.demo.dto;
 
+import dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-
-@Document(collection="post")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post{
+public class PostResponse {
 
-    @Id
     private String postId;
     private String post;
-    private String postedBy; //User Id who posted.
+    private User postedBy; //User Id who posted.
+    private Integer likesCount;
+    private Long commentsCount;
     private Date createdAt;
     private Date updatedAt;
 
