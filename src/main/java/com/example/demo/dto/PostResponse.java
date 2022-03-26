@@ -1,6 +1,5 @@
 package com.example.demo.dto;
 
-import dto.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +12,7 @@ public class PostResponse {
 
     private String postId;
     private String post;
-    private User postedBy; //User Id who posted.
+    private UserDto postedBy; //User Id who posted.
     private Integer likesCount;
     private Long commentsCount;
     private Date createdAt;

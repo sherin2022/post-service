@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @Slf4j
+
 @RequestMapping("/posts")
 public class PostController {
 
@@ -20,6 +22,7 @@ public class PostController {
     PostService postService;
 
     //To get all post all records.
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Post>>getPosts(){
         return new ResponseEntity<List<Post>>(postService.getPosts(), HttpStatus.OK);

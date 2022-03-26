@@ -11,9 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-
-
-public class User {
+public class UserDto {
     private String id;
     private String firstName;
     private String lastName;
@@ -25,5 +23,4 @@ public class User {
     private String employeeId;
     private BloodGroup bloodGroup;
     private Gender gender;
-    private String password;
 }

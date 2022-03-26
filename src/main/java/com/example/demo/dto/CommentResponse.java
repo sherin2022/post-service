@@ -14,7 +14,7 @@ public class CommentResponse {
 
     private String commentId;
     private String comment;
-    private User commentedBy;  //This the user info
+    private UserDto commentedBy;  //This the user info
     private Long likesCount;
     private String commentedOnPost; // This is the postid
     private Date createdAt;

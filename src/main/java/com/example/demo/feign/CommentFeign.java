@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name ="comment-service", fallbackFactory = HystrixFallbackFactory.class)
+@FeignClient(name ="comment-service")
 public interface CommentFeign {
 
-    @GetMapping("/posts/{postId}/comments/count")
+    @GetMapping("/posts/{postId}/comments/count/{commentId}")
     public Long getCommentsCount(@PathVariable("postId") String postId);
-
-    @PostMapping("/posts/{postId}/comments")
-    public CommentResponse createComment(@RequestBody Comment comment);
 
 
 }
