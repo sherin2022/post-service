@@ -14,7 +14,7 @@ public class PostResponse {
     private String post;
     private UserDto postedBy; //User Id who posted.
     private Integer likesCount;
-    private Long commentsCount;
+    private Integer commentsCount;
     private Date createdAt;
     private Date updatedAt;
 

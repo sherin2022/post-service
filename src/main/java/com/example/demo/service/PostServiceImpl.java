@@ -64,7 +64,7 @@ public class PostServiceImpl implements PostService {
         newPostResponse.setPost(post.getPost());
         UserDto postedByUser = userFeign.getUserDetails(post.getPostedBy());
         newPostResponse.setPostedBy(postedByUser);
-        postRepo.save(post);
+       // postRepo.save(post);
 
         return newPostResponse;
     }
