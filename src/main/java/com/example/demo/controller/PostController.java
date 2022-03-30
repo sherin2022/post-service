@@ -33,6 +33,7 @@ public class PostController {
         return new ResponseEntity<PostResponse>(postService.createPost(post),HttpStatus.CREATED);
     }
     //To get a post for a particular Id.
+        @CrossOrigin(origins = "http://localhost:3000")
         @GetMapping("/{postId}")
         public ResponseEntity<PostResponse> getPostDetails(@PathVariable("postId") String postId)
     {

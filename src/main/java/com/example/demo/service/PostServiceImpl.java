@@ -30,6 +30,8 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getPosts() {
+
+       // PostResponse postResponse = new PostResponse();
         return postRepo.findAll();
     }
 
@@ -40,7 +42,7 @@ public class PostServiceImpl implements PostService {
         post.setUpdatedAt(new Date());
         PostResponse postResponse= new PostResponse();
         postResponse.setPost(post.getPost()); //setting the post
-        postResponse.setCommentsCount(0L); //no. of counts
+        postResponse.setCommentsCount(0); //no. of counts
         postResponse.setLikesCount(0);     //no. of likes
         postResponse.setCreatedAt(post.getCreatedAt());    //date created
         postResponse.setUpdatedAt(post.getUpdatedAt());    // date updated

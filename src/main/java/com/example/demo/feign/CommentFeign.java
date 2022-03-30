@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface CommentFeign {
 
     @GetMapping("/posts/{postId}/comments/count")
-    public Long getCommentsCount(@PathVariable("postId") String postId);
+    public Integer getCommentsCount(@PathVariable("postId") String postId);
 
 
 }
