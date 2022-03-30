@@ -15,6 +15,11 @@ spring:
     discovery:
       enabled: true
   data:
-    mongobd:
+    mongodb:
       database: postDB
       port: 27017
+  feign:
+    circuitbreaker:
+      enabled: true
+
+
