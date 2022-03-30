@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PostRepo extends MongoRepository<Post,String> {
-    Post findByPostId(String id);
-    Post deleteByPostId(String id);
+ //   Post findByPostId(String id);
+ //   Post deleteByPostId(String id);
 }

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.Post;
+import com.example.demo.dto.PostDto;
 import com.example.demo.dto.PostResponse;
 
 import java.util.List;
@@ -9,9 +10,10 @@ import java.util.List;
 public interface PostService {
 
     List<Post> getPosts();
-    PostResponse createPost(Post post);
-    PostResponse getPostDetails(String id);
-    Post updatePost(String id, Post post);
+
+    PostDto createPost(PostResponse postResponse);
+    PostDto getPostDetails(String postId);
+    PostDto updatePost(String postId, PostResponse postResponse);
     String deletePost(String postId);
 
 

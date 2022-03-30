@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.Post;
+import com.example.demo.dto.PostDto;
 import com.example.demo.dto.PostResponse;
 import com.example.demo.service.PostService;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,23 +28,23 @@ public class PostController {
     }
     //To add a new post record.
     @PostMapping
-    public ResponseEntity<PostResponse>createPost(@RequestBody Post post){
-        return new ResponseEntity<PostResponse>(postService.createPost(post),HttpStatus.CREATED);
+    public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostResponse postResponse)
+    {
+        return new ResponseEntity<>(postService.createPost(postResponse), HttpStatus.CREATED);
     }
-    //To get a post for a particular Id.
     @GetMapping("/{postId}")
-    public ResponseEntity<PostResponse> getPostDetails(@PathVariable("postId") String postId)
+    public ResponseEntity<PostDto> getPostDetails(@PathVariable("postId") String postId)
     {
         return new ResponseEntity<>(postService.getPostDetails(postId), HttpStatus.OK);
     }
-    //To update a particular postId.
     @PutMapping("/{postId}")
-    public ResponseEntity<Post>updatePost(@PathVariable("postId")String id, @RequestBody Post post){
-        return new ResponseEntity<Post>(postService.updatePost(id,post),HttpStatus.FOUND);
+    public ResponseEntity<PostDto> updatePost(@PathVariable("postId") String postId, @Valid @RequestBody PostResponse postResponse)
+    {
+        return new ResponseEntity<>(postService.updatePost(postId, postResponse), HttpStatus.OK);
     }
     @DeleteMapping("/{postId}")
-    public ResponseEntity<Post>deletePost(@PathVariable("postId")String id){
-        return new ResponseEntity<Post>(postService.deletePost(id),HttpStatus.FOUND);
+    public ResponseEntity<String> deletePost(@PathVariable("postId") String postId)
+    {
+        return new ResponseEntity<>(postService.deletePost(postId), HttpStatus.OK);
     }
-
 }
