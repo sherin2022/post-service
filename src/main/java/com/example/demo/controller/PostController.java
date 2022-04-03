@@ -33,7 +33,7 @@ public class PostController {
         return new ResponseEntity<>(postService.createPost(postResponse), HttpStatus.CREATED);
     }
     @GetMapping("/{postId}")
-    public ResponseEntity<PostDto> getPostDetails(@PathVariable("postId") String postId)
+    public ResponseEntity<PostResponse> getPostDetails(@PathVariable("postId") String postId)
     {
         return new ResponseEntity<>(postService.getPostDetails(postId), HttpStatus.OK);
     }

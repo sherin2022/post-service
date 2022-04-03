@@ -58,6 +58,28 @@ public class PostServiceImpl implements PostService {
 
     }
     @Override
+    public PostResponse getPostDetails(String postId) {
+
+        try{
+            Post post = postRepo.findById(postId).get();
+            PostResponse newPostResponse = new PostResponse();
+            // post.setLikesCount(likeFeign.getLikesCount(postId).getBody());
+            newPostResponse.setCommentsCount(commentFeign.getCommentsCount((postId))); //get the comment count
+            newPostResponse.setLikesCount(likeFeign.getLikesCount(postId));
+            newPostResponse.setId(post.getId());
+            newPostResponse.setPostedBy(userFeign.getUserById(postId));
+            newPostResponse.setCreatedAt(post.getCreatedAt());
+            newPostResponse.setUpdatedAt(post.getUpdatedAt());
+            newPostResponse.setPost(post.getPost());
+            postRepo.save(post);
+            return newPostResponse;
+        }
+        catch (Exception e){
+            throw new PostNotFoundException(POSTNOTFOUND + postId);
+        }
+
+    }
+   /* @Override
     public PostDto getPostDetails(String postId) {
 
         Optional<Post> post1 = postRepo.findById(postId);
@@ -73,7 +95,7 @@ public class PostServiceImpl implements PostService {
             throw new PostNotFoundException(POSTNOTFOUND + postId);
         }
     }
-
+*/
     //    @Override
 //    public Post updatePost(String id, Post post) {
 //        return postRepo.save(new Post(post.getPostId(),post.getPost(),post.getPostedBy(),post.getCreatedAt(),post.getUpdatedAt()));

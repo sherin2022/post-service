@@ -12,7 +12,7 @@ public interface PostService {
     List<Post> getPosts();
 
     PostDto createPost(PostResponse postResponse);
-    PostDto getPostDetails(String postId);
+    PostResponse getPostDetails(String postId);
     PostDto updatePost(String postId, PostResponse postResponse);
     String deletePost(String postId);
 
