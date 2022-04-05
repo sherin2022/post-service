@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+
+import com.example.demo.dto.PostRequest;
 import com.example.demo.model.Post;
 import com.example.demo.dto.PostResponse;
 import com.example.demo.service.PostService;
@@ -10,8 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-
 @RestController
 @Slf4j
 @RequestMapping("/posts")
@@ -23,35 +23,34 @@ public class PostController {
     //To get all post all records.
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
-    public List<PostResponse>getPosts(@RequestParam(value = "page", required = false) Integer page,
-                                              @RequestParam(value = "size", required = false) Integer size){
-        return postService.getPosts(page,size);
+    public List<PostResponse> getPosts(@RequestParam(value = "page", required = false) Integer page,
+                                       @RequestParam(value = "size", required = false) Integer size) {
+        return postService.getPosts(page, size);
     }
+
     //To add a new post record.
     @PostMapping
-    public PostResponse createPost(@RequestBody Post post){
-        return postService.createPost(post);
+    public PostResponse createPost(@RequestBody PostRequest postRequest) {
+        return postService.createPost(postRequest);
     }
 
     //To get a post for a particular Id.
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{postId}")
-        public ResponseEntity<PostResponse> getPostDetails(@PathVariable("postId") String postId)
-    {
+    public ResponseEntity<PostResponse> getPostDetails(@PathVariable("postId") String postId) {
         return new ResponseEntity<>(postService.getPostDetails(postId), HttpStatus.OK);
     }
+
     //To update a particular postId.
     @PutMapping("/{postId}")
-    public ResponseEntity<Post>updatePost(@PathVariable("postId")String id, @RequestBody Post post){
-        return new ResponseEntity<Post>(postService.updatePost(id,post),HttpStatus.FOUND);
-    }
-    @DeleteMapping("/{postId}")
-    public ResponseEntity<Post>deletePost(@PathVariable("postId")String id){
-        return new ResponseEntity<Post>(postService.deletePost(id),HttpStatus.FOUND);
+    public ResponseEntity<PostResponse> updatePost(@PathVariable("postId") String id, @RequestBody PostRequest postRequest) {
+        return new ResponseEntity<PostResponse>(postService.updatePost(id, postRequest), HttpStatus.FOUND);
     }
 
-//    @GetMapping("/test/{userId}")
-//    public ResponseEntity<String>testFeign(@PathVariable("userId")String userId){
-//        return new ResponseEntity<>(postService.testFeign(userId),HttpStatus.OK);
-//    }
+    @DeleteMapping("/{postId}")
+    public ResponseEntity<String> deletePost(@PathVariable("postId") String id) {
+        return new ResponseEntity<String>(postService.deletePost(id), HttpStatus.FOUND);
+    }
+
 }
+

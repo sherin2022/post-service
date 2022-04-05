@@ -10,7 +10,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class UserDto {
+
+
+public class User {
     private String id;
     private String firstName;
     private String lastName;
@@ -22,5 +24,5 @@ public class UserDto {
     private String employeeId;
     private BloodGroup bloodGroup;
     private Gender gender;
-
+    private String password;
 }

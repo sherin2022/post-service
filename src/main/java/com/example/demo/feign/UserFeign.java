@@ -16,8 +16,5 @@ public interface UserFeign {
     @GetMapping("/users/{userId}")
     public UserDto getUserDetails(@PathVariable("userId") String userId);
 
-    //testing feign
-//    @GetMapping("/users/test/{userId}")
-//    public ResponseEntity<String> testFeign();
 
 }
