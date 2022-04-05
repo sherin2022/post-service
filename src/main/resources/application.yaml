@@ -18,8 +18,8 @@ spring:
     mongodb:
       database: postDB
       port: 27017
-  feign:
-    circuitbreaker:
-      enabled: true
+feign:
+  circuitbreaker:
+    enabled: true
 
 

@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.Post;
+import com.example.demo.model.Post;
 import com.example.demo.dto.PostResponse;
 import com.example.demo.service.PostService;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @Slf4j
-
 @RequestMapping("/posts")
 public class PostController {
 
@@ -24,17 +23,19 @@ public class PostController {
     //To get all post all records.
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
-    public ResponseEntity<List<Post>>getPosts(){
-        return new ResponseEntity<List<Post>>(postService.getPosts(), HttpStatus.OK);
+    public List<PostResponse>getPosts(@RequestParam(value = "page", required = false) Integer page,
+                                              @RequestParam(value = "size", required = false) Integer size){
+        return postService.getPosts(page,size);
     }
     //To add a new post record.
     @PostMapping
-    public ResponseEntity<PostResponse>createPost(@RequestBody Post post){
-        return new ResponseEntity<PostResponse>(postService.createPost(post),HttpStatus.CREATED);
+    public PostResponse createPost(@RequestBody Post post){
+        return postService.createPost(post);
     }
+
     //To get a post for a particular Id.
-        @CrossOrigin(origins = "http://localhost:3000")
-        @GetMapping("/{postId}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/{postId}")
         public ResponseEntity<PostResponse> getPostDetails(@PathVariable("postId") String postId)
     {
         return new ResponseEntity<>(postService.getPostDetails(postId), HttpStatus.OK);
@@ -49,4 +50,8 @@ public class PostController {
         return new ResponseEntity<Post>(postService.deletePost(id),HttpStatus.FOUND);
     }
 
+//    @GetMapping("/test/{userId}")
+//    public ResponseEntity<String>testFeign(@PathVariable("userId")String userId){
+//        return new ResponseEntity<>(postService.testFeign(userId),HttpStatus.OK);
+//    }
 }

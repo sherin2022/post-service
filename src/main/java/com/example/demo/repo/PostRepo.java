@@ -1,6 +1,6 @@
 package com.example.demo.repo;
 
-import com.example.demo.dto.Post;
+import com.example.demo.model.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

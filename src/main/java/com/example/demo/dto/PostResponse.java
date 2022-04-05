@@ -12,10 +12,12 @@ public class PostResponse {
 
     private String postId;
     private String post;
-    private UserDto postedBy; //User Id who posted.
+    private UserDto postedByUser; //User Id who posted.
     private Integer likesCount;
     private Integer commentsCount;
     private Date createdAt;
     private Date updatedAt;
+
+    //Changing the postedByUser to return String and not UserDto to check feign. changes 1
 
 }

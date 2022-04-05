@@ -23,4 +23,5 @@ public class UserDto {
     private String employeeId;
     private BloodGroup bloodGroup;
     private Gender gender;
+
 }
