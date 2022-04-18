@@ -1,0 +1,259 @@
+2022-04-18 13:26:23.590  INFO 39296 --- [restartedMain] com.example.demo.PostServiceApplication  : Starting PostServiceApplication using Java 1.8.0_322 on MAVBNG1121239 with PID 39296 (C:\Users\savitago\Downloads\post-service\target\classes started by savitago in C:\Users\savitago\Downloads\post-service)
+2022-04-18 13:26:23.592  INFO 39296 --- [restartedMain] com.example.demo.PostServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-04-18 13:26:23.658  INFO 39296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-18 13:26:23.659  INFO 39296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-18 13:26:24.699  INFO 39296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-18 13:26:24.927  INFO 39296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 1 MongoDB repository interfaces.
+2022-04-18 13:26:25.291  INFO 39296 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=145adeb2-2465-3f73-a7ce-1971b9a5602b
+2022-04-18 13:26:26.800  INFO 39296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-18 13:26:26.834  INFO 39296 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-18 13:26:26.835  INFO 39296 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-18 13:26:27.426  INFO 39296 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-18 13:26:27.426  INFO 39296 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3765 ms
+2022-04-18 13:26:28.311  INFO 39296 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-18 13:26:28.519  INFO 39296 --- [cluster-ClusterId{value='625d19ac2e7379316afb666c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1472}] to localhost:27017
+2022-04-18 13:26:28.520  INFO 39296 --- [cluster-ClusterId{value='625d19ac2e7379316afb666c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=97856900}
+2022-04-18 13:26:28.520  INFO 39296 --- [cluster-rtt-ClusterId{value='625d19ac2e7379316afb666c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1473}] to localhost:27017
+2022-04-18 13:26:28.612  WARN 39296 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-18 13:26:28.765  WARN 39296 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-18 13:26:28.985  WARN 39296 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-18 13:26:29.666  INFO 39296 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-18 13:26:29.800  INFO 39296 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-18 13:26:29.840  INFO 39296 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-18 13:26:29.912  WARN 39296 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-18 13:26:29.912  INFO 39296 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-18 13:26:29.925  WARN 39296 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-18 13:26:29.925  INFO 39296 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-18 13:26:31.279  INFO 39296 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-18 13:26:31.833  WARN 39296 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-18 13:26:31.866  INFO 39296 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-18 13:26:31.946  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-18 13:26:31.953  INFO 39296 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-18 13:26:31.978  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-18 13:26:31.979  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-18 13:26:31.979  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-18 13:26:31.979  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-18 13:26:31.979  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-18 13:26:31.979  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-18 13:26:31.979  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-18 13:26:32.563  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-18 13:26:32.567  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-18 13:26:32.571  INFO 39296 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-18 13:26:32.577  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1650268592576 with initial instances count: 4
+2022-04-18 13:26:32.580  INFO 39296 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-18 13:26:32.581  INFO 39296 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650268592581, current=UP, previous=STARTING]
+2022-04-18 13:26:32.583  INFO 39296 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010: registering service...
+2022-04-18 13:26:32.612  INFO 39296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-18 13:26:32.613  INFO 39296 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-18 13:26:32.644  INFO 39296 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-18 13:26:33.073  INFO 39296 --- [restartedMain] com.example.demo.PostServiceApplication  : Started PostServiceApplication in 10.622 seconds (JVM running for 11.608)
+2022-04-18 13:26:41.418  INFO 39296 --- [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-18 13:26:41.420  INFO 39296 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-18 13:26:41.422  INFO 39296 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-18 13:26:41.491  INFO 39296 --- [http-nio-3010-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1474}] to localhost:27017
+2022-04-18 13:26:41.689  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-1] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:26:41.799  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-2] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:26:41.849  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-3] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:26:42.402  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-4] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:26:42.419  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-5] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:26:42.435  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-6] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:28:42.758  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-7] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:28:42.776  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-8] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:28:42.978  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:28:43.001  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:28:43.012  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:28:43.025  INFO 39296 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:29:33.269  INFO 39296 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application POST-SERVICE with eureka with status DOWN
+2022-04-18 13:29:33.269  INFO 39296 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650268773269, current=DOWN, previous=UP]
+2022-04-18 13:29:33.269  INFO 39296 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010: registering service...
+2022-04-18 13:29:33.274  INFO 39296 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-18 13:29:33.585  INFO 39296 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-18 13:29:36.597  INFO 39296 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-18 13:29:36.613  INFO 39296 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010 - deregister  status: 200
+2022-04-18 13:29:36.618  INFO 39296 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-18 13:30:48.281  INFO 29452 --- [restartedMain] com.example.demo.PostServiceApplication  : Starting PostServiceApplication using Java 1.8.0_322 on MAVBNG1121239 with PID 29452 (C:\Users\savitago\Downloads\post-service\target\classes started by savitago in C:\Users\savitago\Downloads\post-service)
+2022-04-18 13:30:48.282  INFO 29452 --- [restartedMain] com.example.demo.PostServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-04-18 13:30:48.340  INFO 29452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-18 13:30:48.340  INFO 29452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-18 13:30:49.047  INFO 29452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-18 13:30:49.179  INFO 29452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 1 MongoDB repository interfaces.
+2022-04-18 13:30:49.391  INFO 29452 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=145adeb2-2465-3f73-a7ce-1971b9a5602b
+2022-04-18 13:30:50.266  INFO 29452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3010 (http)
+2022-04-18 13:30:50.274  INFO 29452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-18 13:30:50.275  INFO 29452 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-18 13:30:50.365  INFO 29452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-18 13:30:50.365  INFO 29452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2024 ms
+2022-04-18 13:30:50.534  INFO 29452 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-18 13:30:50.596  INFO 29452 --- [cluster-rtt-ClusterId{value='625d1ab225a9c367ec4b629a', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1480}] to localhost:27017
+2022-04-18 13:30:50.596  INFO 29452 --- [cluster-ClusterId{value='625d1ab225a9c367ec4b629a', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1479}] to localhost:27017
+2022-04-18 13:30:50.597  INFO 29452 --- [cluster-ClusterId{value='625d1ab225a9c367ec4b629a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=22279500}
+2022-04-18 13:30:50.641  WARN 29452 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-18 13:30:50.725  WARN 29452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-18 13:30:50.788  WARN 29452 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-18 13:30:51.053  INFO 29452 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'comment-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-18 13:30:51.123  INFO 29452 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-18 13:30:51.146  INFO 29452 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-18 13:30:51.191  WARN 29452 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-18 13:30:51.191  INFO 29452 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-18 13:30:51.198  WARN 29452 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-18 13:30:51.198  INFO 29452 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-18 13:30:52.036  INFO 29452 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-18 13:30:52.470  WARN 29452 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-18 13:30:52.495  INFO 29452 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-18 13:30:52.561  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-18 13:30:52.567  INFO 29452 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-18 13:30:52.592  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-18 13:30:52.593  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-18 13:30:52.593  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-18 13:30:52.593  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-18 13:30:52.593  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-18 13:30:52.593  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-18 13:30:52.593  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-18 13:30:53.009  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-18 13:30:53.011  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-18 13:30:53.013  INFO 29452 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-18 13:30:53.017  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1650268853017 with initial instances count: 4
+2022-04-18 13:30:53.020  INFO 29452 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application POST-SERVICE with eureka with status UP
+2022-04-18 13:30:53.021  INFO 29452 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1650268853021, current=UP, previous=STARTING]
+2022-04-18 13:30:53.022  INFO 29452 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010: registering service...
+2022-04-18 13:30:53.041  INFO 29452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3010 (http) with context path ''
+2022-04-18 13:30:53.041  INFO 29452 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3010
+2022-04-18 13:30:53.056  INFO 29452 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_POST-SERVICE/MAVBNG1121239.mavericsystems.lan:post-service:3010 - registration status: 204
+2022-04-18 13:30:53.408  INFO 29452 --- [restartedMain] com.example.demo.PostServiceApplication  : Started PostServiceApplication in 6.177 seconds (JVM running for 6.741)
+2022-04-18 13:31:07.540  INFO 29452 --- [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-18 13:31:07.540  INFO 29452 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-18 13:31:07.541  INFO 29452 --- [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-18 13:31:07.666  INFO 29452 --- [http-nio-3010-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:1481}] to localhost:27017
+2022-04-18 13:31:08.009  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-1] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:08.169  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-2] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:08.215  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-3] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:08.263  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-4] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:08.279  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-5] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:08.292  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-6] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:11.297  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-7] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:11.306  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-8] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:11.314  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:11.323  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:11.331  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:11.338  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.671  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.680  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-10] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.687  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.704  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.711  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.721  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.737  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.747  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.755  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:24.930 ERROR 29452 --- [http-nio-3010-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: UserFeign#getUserDetails(String) failed and fallback failed.] with root cause
+
+feign.FeignException$InternalServerError: [500] during [GET] to [http://user-service/users/62456ed2cfefbf595a5a66d7] [UserFeign#getUserDetails(String)]: [{"timestamp":"2022-04-18T08:01:24.884+00:00","status":500,"error":"Internal Server Error","message":"No value present","path":"/users/62456ed2cfefbf595a5a66d7"}]
+	at feign.FeignException.serverErrorStatus(FeignException.java:250) ~[feign-core-11.8.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:197) ~[feign-core-11.8.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:185) ~[feign-core-11.8.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:92) ~[feign-core-11.8.jar:na]
+	at feign.AsyncResponseHandler.handleResponse(AsyncResponseHandler.java:96) ~[feign-core-11.8.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:138) ~[feign-core-11.8.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-11.8.jar:na]
+	at org.springframework.cloud.openfeign.FeignCircuitBreakerInvocationHandler.lambda$asSupplier$1(FeignCircuitBreakerInvocationHandler.java:112) ~[spring-cloud-openfeign-core-3.1.1.jar:3.1.1]
+	at org.springframework.cloud.netflix.hystrix.HystrixCircuitBreaker$1.run(HystrixCircuitBreaker.java:45) ~[spring-cloud-netflix-hystrix-2.2.10.RELEASE.jar:2.2.10.RELEASE]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorSubscribeOn$SubscribeOnSubscriber.call(OperatorSubscribeOn.java:100) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:56) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:47) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction.call(HystrixContexSchedulerAction.java:69) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55) ~[rxjava-1.3.8.jar:1.3.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_322]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_322]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_322]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_322]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_322]
+
+2022-04-18 13:31:30.542  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.551  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.557  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.571  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.580  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.586  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.594  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.599  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.606  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:30.624 ERROR 29452 --- [http-nio-3010-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.netflix.hystrix.exception.HystrixRuntimeException: UserFeign#getUserDetails(String) failed and fallback failed.] with root cause
+
+feign.FeignException$InternalServerError: [500] during [GET] to [http://user-service/users/62456ed2cfefbf595a5a66d7] [UserFeign#getUserDetails(String)]: [{"timestamp":"2022-04-18T08:01:30.619+00:00","status":500,"error":"Internal Server Error","message":"No value present","path":"/users/62456ed2cfefbf595a5a66d7"}]
+	at feign.FeignException.serverErrorStatus(FeignException.java:250) ~[feign-core-11.8.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:197) ~[feign-core-11.8.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:185) ~[feign-core-11.8.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:92) ~[feign-core-11.8.jar:na]
+	at feign.AsyncResponseHandler.handleResponse(AsyncResponseHandler.java:96) ~[feign-core-11.8.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:138) ~[feign-core-11.8.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-11.8.jar:na]
+	at org.springframework.cloud.openfeign.FeignCircuitBreakerInvocationHandler.lambda$asSupplier$1(FeignCircuitBreakerInvocationHandler.java:112) ~[spring-cloud-openfeign-core-3.1.1.jar:3.1.1]
+	at org.springframework.cloud.netflix.hystrix.HystrixCircuitBreaker$1.run(HystrixCircuitBreaker.java:45) ~[spring-cloud-netflix-hystrix-2.2.10.RELEASE.jar:2.2.10.RELEASE]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.Observable.unsafeSubscribe(Observable.java:10327) ~[rxjava-1.3.8.jar:1.3.8]
+	at rx.internal.operators.OperatorSubscribeOn$SubscribeOnSubscriber.call(OperatorSubscribeOn.java:100) ~[rxjava-1.3.8.jar:1.3.8]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:56) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction$1.call(HystrixContexSchedulerAction.java:47) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at com.netflix.hystrix.strategy.concurrency.HystrixContexSchedulerAction.call(HystrixContexSchedulerAction.java:69) ~[hystrix-core-1.5.18.jar:1.5.18]
+	at rx.internal.schedulers.ScheduledAction.run(ScheduledAction.java:55) ~[rxjava-1.3.8.jar:1.3.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[na:1.8.0_322]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_322]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_322]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_322]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_322]
+
+2022-04-18 13:31:35.146  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:35.155  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:35.165  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:35.179  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:35.184  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:31:35.191  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:33:14.828  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:33:14.845  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:33:14.878  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:33:14.895  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:33:14.911  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:33:14.920  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:34:19.818  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:34:19.848  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:34:19.863  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:34:19.877  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:34:19.883  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:34:19.891  INFO 29452 --- [hystrix-HystrixCircuitBreakerFactory-9] c.e.demo.config.FeignClientRetryer       : Feign retry attempt
+2022-04-18 13:35:52.610  INFO 29452 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

@@ -8,7 +8,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class PostResponse {
 
-    private String postId;
+    private String id;
     private String post;
     private UserDto postedByUser; //User Id who posted.
     private Integer likesCount;

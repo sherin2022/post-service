@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Document(collection="post")
@@ -14,7 +16,9 @@ import java.util.Date;
 public class PostRequest {
 
     @Id
-    private String postId;
+    private String id;
+    @NotBlank(message = "post should not be blank")
+    @NotNull(message = "post should not be null")
     private String post;
     private String postedBy;
 

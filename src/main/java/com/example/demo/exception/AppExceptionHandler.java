@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class AppExceptionHandler extends ResponseEntityExceptionHandler {
-
     @ExceptionHandler(PostNotFoundException.class)
     ResponseEntity<ApiError> userNotFoundHandler(Exception exception, ServletWebRequest request) {
         ApiError apiError = new ApiError();
@@ -25,6 +24,21 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.setCode(HttpStatus.NOT_FOUND.toString());
         return new ResponseEntity<>(apiError, HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(CustomFeignException.class)
+    ResponseEntity<ApiError> feignNotFoundHandler(Exception exception, ServletWebRequest request) {
+        ApiError apiError = new ApiError();
+        apiError.setMessage(exception.getLocalizedMessage());
+        apiError.setCode(HttpStatus.SERVICE_UNAVAILABLE.toString());
+        return new ResponseEntity<>(apiError, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+    @ExceptionHandler({PostIdMismatchException.class,NoPostAvailableException.class})
+    ResponseEntity<ApiError> postIdMismatchAndNoPostAvailableHandler(Exception exception, ServletWebRequest request) {
+        ApiError apiError = new ApiError();
+        apiError.setMessage(exception.getLocalizedMessage());
+        apiError.setCode(HttpStatus.BAD_REQUEST.toString());
+        return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
+    }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                   HttpHeaders headers, HttpStatus status,
@@ -40,7 +54,6 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
 
 
     }
-
 
 
 }

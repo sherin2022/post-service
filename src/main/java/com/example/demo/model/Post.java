@@ -15,7 +15,7 @@ import java.util.Date;
 public class Post{
 
     @Id
-    private String postId;
+    private String id;
     private String post;
     private String postedBy; //User Id who posted.
     private Date createdAt;
