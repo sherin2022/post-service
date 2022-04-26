@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.example.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ import java.util.Date;
 public class Post{
 
     @Id
-    private String postId;
+    private String id;
     private String post;
     private String postedBy; //User Id who posted.
     private Date createdAt;

@@ -1,17 +1,28 @@
 package com.example.demo.service;
-
 import com.example.demo.dto.UserDto;
+import com.example.demo.exception.BadRequestException;
+import com.example.demo.exception.CustomFeignException;
+import com.example.demo.exception.PostNotFoundException;
 import com.example.demo.feign.CommentFeign;
 import com.example.demo.feign.LikeFeign;
-import com.example.demo.dto.Post;
+import com.example.demo.model.Post;
 import com.example.demo.dto.PostResponse;
+import com.example.demo.dto.PostRequest;
 import com.example.demo.feign.UserFeign;
 import com.example.demo.repo.PostRepo;
+import com.netflix.hystrix.exception.HystrixRuntimeException;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+
+import static com.example.demo.constantException.ConstantException.*;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -28,28 +39,43 @@ public class PostServiceImpl implements PostService {
     @Autowired
     UserFeign userFeign;
 
-    @Override
-    public List<Post> getPosts() {
 
-       // PostResponse postResponse = new PostResponse();
-        return postRepo.findAll();
+    @Override
+    public List<PostResponse> getPosts(Integer page, Integer pageSize) {
+
+        page = Optional.ofNullable(page).orElse(0);
+        pageSize = Optional.ofNullable(pageSize).orElse(10);
+        Pageable paging = PageRequest.of(page, pageSize);
+        Page<Post> allPosts = postRepo.findAll(paging);
+        List<PostResponse> postResponses = new ArrayList<>();
+        for (Post post : allPosts) {
+            PostResponse newPostResponse = new PostResponse();
+            newPostResponse.setCommentsCount(commentFeign.getCommentsCount((post.getId()))); //get the comment count
+            newPostResponse.setLikesCount(likeFeign.getLikesCount(post.getId()));
+            newPostResponse.setId(post.getId());
+            newPostResponse.setCreatedAt(post.getCreatedAt());
+            newPostResponse.setUpdatedAt(post.getUpdatedAt());
+            newPostResponse.setPost(post.getPost());
+            UserDto postedByUser = userFeign.getUserDetails(post.getPostedBy());
+            newPostResponse.setPostedByUser(postedByUser);
+            postResponses.add(newPostResponse);
+        }
+        return postResponses;
     }
 
     @Override
-    public PostResponse createPost(Post post) {
+    public PostResponse createPost(PostRequest postRequest) {
 
-        post.setCreatedAt(new Date());
-        post.setUpdatedAt(new Date());
-        PostResponse postResponse= new PostResponse();
-        postResponse.setPost(post.getPost()); //setting the post
+        Post newPost = postRepo.save(new Post(postRequest.getId(), postRequest.getPost(), postRequest.getPostedBy(),new Date(),new Date()));
+        PostResponse postResponse = new PostResponse();
+        postResponse.setPost(postRequest.getPost()); //setting the post
         postResponse.setCommentsCount(0); //no. of counts
         postResponse.setLikesCount(0);     //no. of likes
-        postResponse.setCreatedAt(post.getCreatedAt());    //date created
-        postResponse.setUpdatedAt(post.getUpdatedAt());    // date updated
-        Post newPost = postRepo.save(new Post(post.getPostId(),post.getPost(),post.getPostedBy(),post.getCreatedAt(),post.getUpdatedAt()));
-        postResponse.setPostId(newPost.getPostId());
-        UserDto postedByUser = userFeign.getUserDetails(post.getPostedBy());
-        postResponse.setPostedBy(postedByUser);
+        postResponse.setCreatedAt(newPost.getCreatedAt());    //date created
+        postResponse.setUpdatedAt(newPost.getUpdatedAt());    // date updated
+        postResponse.setId(newPost.getId());
+        UserDto postedByUser = userFeign.getUserDetails(postRequest.getPostedBy());
+        postResponse.setPostedByUser(postedByUser);
         return postResponse;
     }
 
@@ -60,34 +86,62 @@ public class PostServiceImpl implements PostService {
         PostResponse newPostResponse = new PostResponse();
         newPostResponse.setCommentsCount(commentFeign.getCommentsCount((postId))); //get the comment count
         newPostResponse.setLikesCount(likeFeign.getLikesCount(postId));
-        newPostResponse.setPostId(post.getPostId());
+        newPostResponse.setId(post.getId());
         newPostResponse.setCreatedAt(post.getCreatedAt());
         newPostResponse.setUpdatedAt(post.getUpdatedAt());
         newPostResponse.setPost(post.getPost());
         UserDto postedByUser = userFeign.getUserDetails(post.getPostedBy());
-        newPostResponse.setPostedBy(postedByUser);
-       // postRepo.save(post);
-
+        newPostResponse.setPostedByUser(postedByUser);
         return newPostResponse;
     }
 
+    @Override
+    public PostResponse updatePost(String postId, PostRequest postRequest) {
+        Post postToBeUpdated;
+        try {
+            Optional<Post> post = postRepo.findById(postId);
+            if(post.isPresent()) {
+            postToBeUpdated = postRepo.findById(postId).get();
+            postToBeUpdated.setPost(postRequest.getPost());
+            postToBeUpdated.setUpdatedAt(new Date());
+            postRepo.save(postToBeUpdated);
+
+            PostResponse updatedPostResponse = new PostResponse();
+            updatedPostResponse.setCommentsCount(commentFeign.getCommentsCount((postToBeUpdated.getId()))); //get the comment count
+            updatedPostResponse.setLikesCount(likeFeign.getLikesCount(postToBeUpdated.getId()));
+            updatedPostResponse.setId(postToBeUpdated.getId());
+            updatedPostResponse.setCreatedAt(postToBeUpdated.getCreatedAt());
+            updatedPostResponse.setUpdatedAt(postToBeUpdated.getUpdatedAt());
+            updatedPostResponse.setPost(postToBeUpdated.getPost());
+            UserDto postToBeUpdatededByUser = userFeign.getUserDetails(postToBeUpdated.getPostedBy());
+            updatedPostResponse.setPostedByUser(postToBeUpdatededByUser);
+
+            return updatedPostResponse;
+            }  else{
+            throw new PostNotFoundException(POSTNOTFOUND + postId);}
+        }
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
+        }
+    }
+
 
     @Override
-    public Post updatePost(String postId, Post post) {
-        Post postToBeUpdated = postRepo.findByPostId(postId);
-        postToBeUpdated.setPost(post.getPost());
-        postToBeUpdated.setUpdatedAt(new Date());
-        return postRepo.save(postToBeUpdated);
-}
+    public String deletePost(String id) {
 
-    @Override
-    public Post deletePost(String id) {
-
-        Post postToBeDeleted = postRepo.findByPostId(id);
-        return postRepo.deleteByPostId(postToBeDeleted.getPostId());
+        try {
+            Post postToBeDeleted = postRepo.findById(id).get();
+             postRepo.deleteById(postToBeDeleted.getId());
+             return DELETEPOST;
+        }
+        catch (Exception e)
+        {
+            throw new PostNotFoundException(POSTNOTFOUND + id);
+        }
     }
 
 
 
 
 }
+

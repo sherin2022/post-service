@@ -18,8 +18,11 @@ spring:
     mongodb:
       database: postDB
       port: 27017
-  feign:
-    circuitbreaker:
-      enabled: true
+feign:
+  circuitbreaker:
+    enabled: true
 
+logging:
+  file:
+    name: C:/Users/savitago/Downloads/post-service/src/logs/post_service.log
 
